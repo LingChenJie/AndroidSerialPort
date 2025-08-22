@@ -22,6 +22,12 @@ android {
         }
     }
 
+    libraryVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "SerialPortLibrary_" + defaultConfig.versionName + ".aar"
+        }
+    }
+
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
